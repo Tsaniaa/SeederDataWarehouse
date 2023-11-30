@@ -16,7 +16,7 @@ class DokterSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        for($i = 1; $i <= 10; $i++){
+        for($i = 1; $i <= 50; $i++){
             \DB::table('dokter')->insert([
                 'Kd_Dokter' => $faker->unique()->numberBetween(1, 999999),
                 'Nm_Dokter' => $faker->name,

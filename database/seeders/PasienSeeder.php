@@ -16,7 +16,7 @@ class PasienSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        for($i = 1; $i <= 10; $i++){
+        for($i = 1; $i <= 100; $i++){
             \DB::table('pasien')->insert([
                 'Kd_Pasien' => $faker->unique()->numberBetween(1, 999999),
                 'Nm_Pasien' => $faker->name,

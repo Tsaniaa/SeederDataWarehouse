@@ -25,7 +25,7 @@ class PenjualanSeeder extends Seeder
         $Kd_Jenis = DB::table('jenis_medis')->pluck('Kd_Jenis')->toArray();
         $Kd_Barang = DB::table('barang')->pluck('Kd_Barang')->toArray();
 
-        for($i = 1; $i <= 100; $i++){
+        for($i = 1; $i <= 100000; $i++){
             \DB::table('penjualan')->insert([
                 'Kategori' => $faker->word,
                 'Nm_Group' => $faker->word,
@@ -35,7 +35,7 @@ class PenjualanSeeder extends Seeder
                 'Kd_Terapi' => $faker->randomElement($Kd_Terapi),
                 'Kd_Medis' => $faker->randomElement($Kd_Medis),
                 'Kd_Jenis' => $faker->randomElement($Kd_Jenis),
-                'No_Reg' => $faker->unique()->numberBetween(1, 999999999),
+                'No_Reg' => $faker->numberBetween(1, 999999999),
                 'Kd_Barang' => $faker->randomElement($Kd_Barang),
                 'Nama' => $faker->name,
                 'Qty' => $faker->numberBetween(1,20),
